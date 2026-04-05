@@ -7,26 +7,26 @@
 }
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #fafafa;
-  --card: #141414;
-  --card-foreground: #fafafa;
-  --popover: #141414;
-  --popover-foreground: #fafafa;
-  --primary: #c9a86c;
-  --primary-foreground: #0a0a0a;
-  --secondary: #1f1f1f;
-  --secondary-foreground: #fafafa;
-  --muted: #262626;
-  --muted-foreground: #a1a1aa;
-  --accent: #c9a86c;
-  --accent-foreground: #0a0a0a;
-  --destructive: #ef4444;
+  --background: #f8f6f3;
+  --foreground: #1a1a1a;
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a1a;
+  --primary: #1a1a1a;
+  --primary-foreground: #f8f6f3;
+  --secondary: #e8e4df;
+  --secondary-foreground: #1a1a1a;
+  --muted: #f0ece7;
+  --muted-foreground: #6b6b6b;
+  --accent: #c4a77d;
+  --accent-foreground: #1a1a1a;
+  --destructive: #dc2626;
   --destructive-foreground: #fafafa;
-  --border: #262626;
-  --input: #262626;
-  --ring: #c9a86c;
-  --radius: 0.5rem;
+  --border: #e0dcd7;
+  --input: #e0dcd7;
+  --ring: #1a1a1a;
+  --radius: 0rem;
 }
 
 * {
@@ -44,14 +44,12 @@ body {
   color: var(--primary-foreground);
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -59,8 +57,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--muted);
-  border-radius: 4px;
+  background: var(--border);
 }
 
 ::-webkit-scrollbar-thumb:hover {

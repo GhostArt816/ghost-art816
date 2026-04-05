@@ -1,17 +1,19 @@
-import { Hero } from "@/components/home/hero";
-import { FeaturedWork } from "@/components/home/featured-work";
-import { Services } from "@/components/home/services";
-import { Testimonials } from "@/components/home/testimonials";
-import { CallToAction } from "@/components/home/call-to-action";
+import { HeroSection } from "@/components/home/hero-section";
+import { SelectedWork } from "@/components/home/selected-work";
+import { ServicesPreview } from "@/components/home/services-preview";
+import { Philosophy } from "@/components/home/philosophy";
+import { ClientsMarquee } from "@/components/home/clients-marquee";
+import { ContactCta } from "@/components/home/contact-cta";
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <FeaturedWork />
-      <Services />
-      <Testimonials />
-      <CallToAction />
+      <HeroSection />
+      <ClientsMarquee />
+      <SelectedWork />
+      <ServicesPreview />
+      <Philosophy />
+      <ContactCta />
     </>
   );
 }

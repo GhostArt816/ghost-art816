@@ -1,15 +1,24 @@
 "use client";
 
 import { useState } from "react";
-import { Send, Loader2 } from "lucide-react";
+import { ArrowRight, Loader2, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const projectTypes = [
-  "Portrait Commission",
-  "Digital Illustration",
-  "Traditional Painting",
-  "Commercial Project",
+  "Brand Strategy",
+  "Visual Identity",
+  "Digital Experience",
+  "Art Direction",
+  "Packaging Design",
   "Other",
+];
+
+const budgetRanges = [
+  "Under $25,000",
+  "$25,000 - $50,000",
+  "$50,000 - $100,000",
+  "$100,000+",
+  "Not sure yet",
 ];
 
 export function ContactForm() {
@@ -19,37 +28,32 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1500));
-
     setIsSubmitting(false);
     setIsSubmitted(true);
   };
 
   if (isSubmitted) {
     return (
-      <div className="rounded-lg bg-[var(--card)] p-12 text-center">
-        <div className="mb-6 inline-flex items-center justify-center w-16 h-16 rounded-full bg-[var(--primary)]/10">
-          <Send className="h-7 w-7 text-[var(--primary)]" />
+      <div className="flex flex-col items-center justify-center py-16 text-center">
+        <div className="mb-6 flex h-16 w-16 items-center justify-center border border-foreground">
+          <Check className="h-8 w-8" />
         </div>
-        <h3 className="font-serif text-2xl text-[var(--foreground)] mb-3">
-          Message Sent!
-        </h3>
-        <p className="text-[var(--muted-foreground)]">
-          Thank you for reaching out. I&apos;ll get back to you within 24-48 hours.
+        <h3 className="font-serif text-2xl">Thank you</h3>
+        <p className="mt-2 text-muted-foreground">
+          We have received your message and will be in touch within 48 hours.
         </p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <form onSubmit={handleSubmit} className="space-y-8">
+      <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label
             htmlFor="firstName"
-            className="block text-sm font-medium text-[var(--foreground)] mb-2"
+            className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground"
           >
             First Name
           </label>
@@ -58,14 +62,14 @@ export function ContactForm() {
             id="firstName"
             name="firstName"
             required
-            className="w-full rounded-lg border border-[var(--border)] bg-[var(--card)] px-4 py-3 text-[var(--foreground)] placeholder:text-[var(--muted-foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all"
-            placeholder="John"
+            className="w-full border-b border-border bg-transparent py-3 text-foreground placeholder:text-muted-foreground focus:border-foreground focus:outline-none transition-colors"
+            placeholder="Jane"
           />
         </div>
         <div>
           <label
             htmlFor="lastName"
-            className="block text-sm font-medium text-[var(--foreground)] mb-2"
+            className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground"
           >
             Last Name
           </label>
@@ -74,8 +78,8 @@ export function ContactForm() {
             id="lastName"
             name="lastName"
             required
-            className="w-full rounded-lg border border-[var(--border)] bg-[var(--card)] px-4 py-3 text-[var(--foreground)] placeholder:text-[var(--muted-foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all"
-            placeholder="Doe"
+            className="w-full border-b border-border bg-transparent py-3 text-foreground placeholder:text-muted-foreground focus:border-foreground focus:outline-none transition-colors"
+            placeholder="Smith"
           />
         </div>
       </div>
@@ -83,7 +87,7 @@ export function ContactForm() {
       <div>
         <label
           htmlFor="email"
-          className="block text-sm font-medium text-[var(--foreground)] mb-2"
+          className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground"
         >
           Email
         </label>
@@ -92,15 +96,31 @@ export function ContactForm() {
           id="email"
           name="email"
           required
-          className="w-full rounded-lg border border-[var(--border)] bg-[var(--card)] px-4 py-3 text-[var(--foreground)] placeholder:text-[var(--muted-foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all"
-          placeholder="john@example.com"
+          className="w-full border-b border-border bg-transparent py-3 text-foreground placeholder:text-muted-foreground focus:border-foreground focus:outline-none transition-colors"
+          placeholder="jane@company.com"
+        />
+      </div>
+
+      <div>
+        <label
+          htmlFor="company"
+          className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground"
+        >
+          Company
+        </label>
+        <input
+          type="text"
+          id="company"
+          name="company"
+          className="w-full border-b border-border bg-transparent py-3 text-foreground placeholder:text-muted-foreground focus:border-foreground focus:outline-none transition-colors"
+          placeholder="Your company name"
         />
       </div>
 
       <div>
         <label
           htmlFor="projectType"
-          className="block text-sm font-medium text-[var(--foreground)] mb-2"
+          className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground"
         >
           Project Type
         </label>
@@ -108,9 +128,9 @@ export function ContactForm() {
           id="projectType"
           name="projectType"
           required
-          className="w-full rounded-lg border border-[var(--border)] bg-[var(--card)] px-4 py-3 text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all"
+          className="w-full border-b border-border bg-transparent py-3 text-foreground focus:border-foreground focus:outline-none transition-colors"
         >
-          <option value="">Select a project type</option>
+          <option value="">Select a service</option>
           {projectTypes.map((type) => (
             <option key={type} value={type}>
               {type}
@@ -122,38 +142,38 @@ export function ContactForm() {
       <div>
         <label
           htmlFor="budget"
-          className="block text-sm font-medium text-[var(--foreground)] mb-2"
+          className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground"
         >
           Budget Range
         </label>
         <select
           id="budget"
           name="budget"
-          className="w-full rounded-lg border border-[var(--border)] bg-[var(--card)] px-4 py-3 text-[var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all"
+          className="w-full border-b border-border bg-transparent py-3 text-foreground focus:border-foreground focus:outline-none transition-colors"
         >
-          <option value="">Select a budget range</option>
-          <option value="under-500">Under $500</option>
-          <option value="500-1000">$500 - $1,000</option>
-          <option value="1000-2500">$1,000 - $2,500</option>
-          <option value="over-2500">Over $2,500</option>
-          <option value="undecided">Not sure yet</option>
+          <option value="">Select a range</option>
+          {budgetRanges.map((range) => (
+            <option key={range} value={range}>
+              {range}
+            </option>
+          ))}
         </select>
       </div>
 
       <div>
         <label
           htmlFor="message"
-          className="block text-sm font-medium text-[var(--foreground)] mb-2"
+          className="mb-2 block text-xs uppercase tracking-widest text-muted-foreground"
         >
-          Tell me about your project
+          Project Details
         </label>
         <textarea
           id="message"
           name="message"
-          rows={6}
+          rows={4}
           required
-          className="w-full rounded-lg border border-[var(--border)] bg-[var(--card)] px-4 py-3 text-[var(--foreground)] placeholder:text-[var(--muted-foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all resize-none"
-          placeholder="Describe your vision, inspiration, or any details you'd like to share..."
+          className="w-full border-b border-border bg-transparent py-3 text-foreground placeholder:text-muted-foreground focus:border-foreground focus:outline-none transition-colors resize-none"
+          placeholder="Tell us about your project, goals, and timeline..."
         />
       </div>
 
@@ -161,10 +181,8 @@ export function ContactForm() {
         type="submit"
         disabled={isSubmitting}
         className={cn(
-          "w-full inline-flex items-center justify-center gap-2 rounded-full bg-[var(--primary)] px-8 py-4 text-sm font-medium text-[var(--primary-foreground)] transition-all",
-          isSubmitting
-            ? "opacity-70 cursor-not-allowed"
-            : "hover:bg-[var(--primary)]/90"
+          "group inline-flex items-center gap-2 border border-foreground bg-foreground px-8 py-4 text-sm uppercase tracking-widest text-background transition-all hover:bg-transparent hover:text-foreground",
+          isSubmitting && "opacity-70 cursor-not-allowed"
         )}
       >
         {isSubmitting ? (
@@ -174,8 +192,8 @@ export function ContactForm() {
           </>
         ) : (
           <>
-            Send Message
-            <Send className="h-4 w-4" />
+            Send Inquiry
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </>
         )}
       </button>

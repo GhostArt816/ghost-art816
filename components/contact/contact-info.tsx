@@ -1,81 +1,80 @@
-import { Mail, Clock, Instagram, Twitter } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 
 export function ContactInfo() {
   return (
-    <div className="space-y-8">
-      <div className="rounded-lg bg-[var(--card)] p-6">
-        <h3 className="font-serif text-xl text-[var(--foreground)] mb-6">
-          Contact Information
-        </h3>
-
-        <div className="space-y-4">
+    <div className="space-y-12">
+      <div>
+        <h2 className="mb-8 font-serif text-2xl">Get in Touch</h2>
+        <div className="space-y-6">
           <div className="flex items-start gap-4">
-            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[var(--secondary)] flex items-center justify-center">
-              <Mail className="h-5 w-5 text-[var(--primary)]" />
-            </div>
+            <Mail className="mt-1 h-5 w-5 text-muted-foreground" />
             <div>
-              <p className="text-sm text-[var(--muted-foreground)]">Email</p>
+              <p className="mb-1 text-xs uppercase tracking-widest text-muted-foreground">
+                Email
+              </p>
               <a
-                href="mailto:hello@ghostart.com"
-                className="text-[var(--foreground)] hover:text-[var(--primary)] transition-colors"
+                href="mailto:hello@atelierstudio.com"
+                className="text-foreground transition-colors hover:text-muted-foreground"
               >
-                hello@ghostart.com
+                hello@atelierstudio.com
               </a>
             </div>
           </div>
 
           <div className="flex items-start gap-4">
-            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[var(--secondary)] flex items-center justify-center">
-              <Clock className="h-5 w-5 text-[var(--primary)]" />
-            </div>
+            <MapPin className="mt-1 h-5 w-5 text-muted-foreground" />
             <div>
-              <p className="text-sm text-[var(--muted-foreground)]">
-                Response Time
+              <p className="mb-1 text-xs uppercase tracking-widest text-muted-foreground">
+                Location
               </p>
-              <p className="text-[var(--foreground)]">Within 24-48 hours</p>
+              <p className="text-foreground">
+                New York, NY
+                <br />
+                <span className="text-muted-foreground">
+                  Available for global projects
+                </span>
+              </p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="rounded-lg bg-[var(--card)] p-6">
-        <h3 className="font-serif text-xl text-[var(--foreground)] mb-6">
-          Follow Along
-        </h3>
-
-        <div className="flex gap-4">
+      <div className="border-t border-border pt-12">
+        <h3 className="mb-4 font-serif text-xl">Connect</h3>
+        <div className="flex flex-col gap-3">
           <a
             href="#"
-            className="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--secondary)] text-[var(--muted-foreground)] hover:text-[var(--primary)] hover:bg-[var(--muted)] transition-all"
+            className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            <Instagram className="h-5 w-5" />
-            <span className="sr-only">Instagram</span>
+            Instagram
           </a>
           <a
             href="#"
-            className="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--secondary)] text-[var(--muted-foreground)] hover:text-[var(--primary)] hover:bg-[var(--muted)] transition-all"
+            className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            <Twitter className="h-5 w-5" />
-            <span className="sr-only">Twitter</span>
+            LinkedIn
+          </a>
+          <a
+            href="#"
+            className="text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Behance
           </a>
         </div>
-
-        <p className="mt-4 text-sm text-[var(--muted-foreground)]">
-          See works in progress and behind-the-scenes content.
-        </p>
       </div>
 
-      <div className="rounded-lg border border-[var(--primary)]/20 bg-[var(--primary)]/5 p-6">
-        <h3 className="font-serif text-lg text-[var(--foreground)] mb-2">
-          Commission Status
-        </h3>
-        <div className="flex items-center gap-2 mb-3">
-          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-          <span className="text-sm text-[var(--primary)]">Open for commissions</span>
-        </div>
-        <p className="text-sm text-[var(--muted-foreground)]">
-          Current wait time: 2-3 weeks before starting new projects.
+      <div className="border-t border-border pt-12">
+        <h3 className="mb-4 font-serif text-xl">New Business</h3>
+        <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+          For new project inquiries, please fill out the form or email us
+          directly. We typically respond within 48 hours.
         </p>
+        <div className="flex items-center gap-2">
+          <span className="h-2 w-2 animate-pulse rounded-full bg-accent" />
+          <span className="text-sm text-muted-foreground">
+            Currently accepting new projects
+          </span>
+        </div>
       </div>
     </div>
   );

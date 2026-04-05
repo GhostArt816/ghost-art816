@@ -1,20 +1,24 @@
+import { Metadata } from "next";
 import { AboutHero } from "@/components/about/about-hero";
-import { AboutStory } from "@/components/about/about-story";
-import { AboutValues } from "@/components/about/about-values";
-import type { Metadata } from "next";
+import { StorySection } from "@/components/about/story-section";
+import { ValuesSection } from "@/components/about/values-section";
+import { TeamSection } from "@/components/about/team-section";
+import { AwardsBanner } from "@/components/about/awards-banner";
 
 export const metadata: Metadata = {
-  title: "About | Ghost Art",
+  title: "About | Atelier Studio",
   description:
-    "Learn about Ghost Art, the artist behind the custom artwork. Discover the creative journey, artistic philosophy, and passion for bringing visions to life.",
+    "Learn about our story, values, and the team behind Atelier Studio. We are a luxury creative agency dedicated to exceptional brand experiences.",
 };
 
 export default function AboutPage() {
   return (
     <>
       <AboutHero />
-      <AboutStory />
-      <AboutValues />
+      <StorySection />
+      <ValuesSection />
+      <TeamSection />
+      <AwardsBanner />
     </>
   );
 }

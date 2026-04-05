@@ -20,29 +20,28 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Ghost Art | Custom Artwork & Commissions",
+  title: "Atelier Studio | Luxury Creative Agency",
   description:
-    "Discover unique custom artwork by Ghost Art. Specializing in both digital and traditional mediums, we bring your creative visions to life through bespoke commissions and original pieces.",
+    "A premium creative agency crafting exceptional brand experiences. We specialize in brand strategy, visual identity, and bespoke design solutions for discerning clients.",
   keywords: [
-    "custom artwork",
-    "art commissions",
-    "digital art",
-    "traditional art",
-    "ghost art",
-    "original paintings",
-    "illustration",
+    "creative agency",
+    "brand strategy",
+    "luxury design",
+    "visual identity",
+    "premium branding",
+    "design studio",
   ],
-  authors: [{ name: "Ghost Art" }],
+  authors: [{ name: "Atelier Studio" }],
   openGraph: {
-    title: "Ghost Art | Custom Artwork & Commissions",
+    title: "Atelier Studio | Luxury Creative Agency",
     description:
-      "Discover unique custom artwork by Ghost Art. Specializing in both digital and traditional mediums.",
+      "A premium creative agency crafting exceptional brand experiences.",
     type: "website",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a0a",
+  themeColor: "#f8f6f3",
   width: "device-width",
   initialScale: 1,
 };
@@ -53,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} font-sans antialiased`}
       >
